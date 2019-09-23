@@ -20,4 +20,7 @@ public interface ProductMapper {
 
     @Select("select * from product")
     List<Product> findAll();
+
+
+    void add(Product product);
 }
