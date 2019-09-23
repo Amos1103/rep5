@@ -23,4 +23,6 @@ public interface ProductMapper {
 
 
     void add(Product product);
+
+    void findOne(Integer id);
 }
