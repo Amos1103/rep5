@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+            <!--开启spring注解驱动支持，默认加载三大组件，并且底层默认使用jackson进行数据转换-->
+          <mvc:annotation-driven />
+
+          <!--开启spring mvc包扫描路径-->
+          <context:component-scan base-package="cn.itcast.controller" />
+
+          <!--开启spring mvc静态资源处理, 替换上边三行繁琐的操作-->
+          <mvc:default-servlet-handler />
+
+          <!--配置视图解析器-->
+          <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="suffix" value=".jsp"/>
+              <property name="prefix" value="/jsp/" />
+          </bean>
+
+
+
+</beans>
